@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController id="T4f-fa-AST">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="dYy-P1-h91"/>
+                <viewControllerLayoutGuide type="bottom" id="xHd-v8-cJc"/>
+            </layoutGuides>
+            <view key="view" contentMode="scaleToFill" id="niy-7u-Eit">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbo-BU-2ze">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOm-eN-Kfh">
+                                <rect key="frame" x="0.0" y="0.0" width="34" height="42"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRU-ND-XcY">
+                                <rect key="frame" x="34" y="0.0" width="34" height="42"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3F-E0-eC9">
+                                <rect key="frame" x="68" y="0.0" width="34" height="42"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbO-V0-t3U">
+                                <rect key="frame" x="102" y="0.0" width="34.5" height="42"/>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HH1-y5-4IZ">
+                                <rect key="frame" x="136.5" y="0.0" width="34" height="42"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiF-np-hYP">
+                                <rect key="frame" x="170.5" y="0.0" width="34" height="42"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ze3-Zy-ja7">
+                                <rect key="frame" x="204.5" y="0.0" width="34" height="42"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Sa-70-1dE">
+                                <rect key="frame" x="238.5" y="0.0" width="34.5" height="42"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gg2-UD-xKL">
+                                <rect key="frame" x="273" y="0.0" width="34" height="42"/>
+                                <color key="backgroundColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TY6-oq-28J">
+                                <rect key="frame" x="307" y="0.0" width="34" height="42"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hlk-SX-CA1">
+                                <rect key="frame" x="341" y="0.0" width="34" height="42"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="TY6-oq-28J" firstAttribute="width" secondItem="DOm-eN-Kfh" secondAttribute="width" id="84o-WW-bMc"/>
+                            <constraint firstItem="ze3-Zy-ja7" firstAttribute="width" secondItem="DOm-eN-Kfh" secondAttribute="width" id="G7n-x7-lmO"/>
+                            <constraint firstItem="gg2-UD-xKL" firstAttribute="width" secondItem="DOm-eN-Kfh" secondAttribute="width" id="Ht1-Q5-ORD"/>
+                            <constraint firstItem="4Sa-70-1dE" firstAttribute="width" secondItem="DOm-eN-Kfh" secondAttribute="width" id="QY0-mk-0XD"/>
+                            <constraint firstItem="BiF-np-hYP" firstAttribute="width" secondItem="DOm-eN-Kfh" secondAttribute="width" id="VgO-WF-SMA"/>
+                            <constraint firstItem="b3F-E0-eC9" firstAttribute="width" secondItem="DOm-eN-Kfh" secondAttribute="width" id="XQg-oS-HLS"/>
+                            <constraint firstItem="jbO-V0-t3U" firstAttribute="width" secondItem="DOm-eN-Kfh" secondAttribute="width" id="gap-KL-ffY"/>
+                            <constraint firstItem="Hlk-SX-CA1" firstAttribute="width" secondItem="DOm-eN-Kfh" secondAttribute="width" id="k1N-rU-IZe"/>
+                            <constraint firstItem="HH1-y5-4IZ" firstAttribute="width" secondItem="DOm-eN-Kfh" secondAttribute="width" id="rge-Wf-Tow"/>
+                            <constraint firstItem="rRU-ND-XcY" firstAttribute="width" secondItem="DOm-eN-Kfh" secondAttribute="width" id="uEk-cq-R0x"/>
+                        </constraints>
+                    </stackView>
+                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHB-xE-M1A">
+                        <rect key="frame" x="0.0" y="42" width="375" height="216"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="216" id="tXG-6e-qKi"/>
+                        </constraints>
+                    </pickerView>
+                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="40" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="Jui-mv-615">
+                        <rect key="frame" x="-2.5" y="258" width="379" height="43"/>
+                        <color key="thumbTintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </slider>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="xHd-v8-cJc" firstAttribute="top" secondItem="Jui-mv-615" secondAttribute="bottom" id="DOf-pU-FnV"/>
+                    <constraint firstItem="Jui-mv-615" firstAttribute="top" secondItem="RHB-xE-M1A" secondAttribute="bottom" id="HAC-fk-U4t"/>
+                    <constraint firstItem="cbo-BU-2ze" firstAttribute="width" secondItem="RHB-xE-M1A" secondAttribute="width" id="MHe-D7-D54"/>
+                    <constraint firstItem="cbo-BU-2ze" firstAttribute="top" secondItem="dYy-P1-h91" secondAttribute="bottom" id="OpS-OR-f7u"/>
+                    <constraint firstItem="RHB-xE-M1A" firstAttribute="width" secondItem="niy-7u-Eit" secondAttribute="width" id="R7C-Mo-yVO"/>
+                    <constraint firstItem="RHB-xE-M1A" firstAttribute="centerX" secondItem="niy-7u-Eit" secondAttribute="centerX" id="VgN-FC-DcC"/>
+                    <constraint firstItem="RHB-xE-M1A" firstAttribute="top" secondItem="cbo-BU-2ze" secondAttribute="bottom" id="e7t-GP-MFG"/>
+                    <constraint firstItem="RHB-xE-M1A" firstAttribute="centerY" secondItem="niy-7u-Eit" secondAttribute="centerY" id="owu-9B-ypp"/>
+                    <constraint firstItem="Jui-mv-615" firstAttribute="centerX" secondItem="RHB-xE-M1A" secondAttribute="centerX" id="sEV-bO-SI1"/>
+                    <constraint firstItem="cbo-BU-2ze" firstAttribute="centerX" secondItem="RHB-xE-M1A" secondAttribute="centerX" id="vsx-6J-jk8"/>
+                    <constraint firstItem="Jui-mv-615" firstAttribute="width" secondItem="RHB-xE-M1A" secondAttribute="width" id="yWr-Si-Aex"/>
+                </constraints>
+            </view>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <size key="freeformSize" width="375" height="300"/>
+            <point key="canvasLocation" x="36.5" y="25"/>
+        </viewController>
+    </objects>
+</document>
