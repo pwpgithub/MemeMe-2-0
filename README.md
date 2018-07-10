@@ -8,8 +8,11 @@ An app that enables a user to take a picture, and add text at the top and bottom
   * iOS 11.4 or later
 
 ### Overview
-
-
+- An edit view allow users to take a photo using camera, or load a photo from photos library.
+- Users can post text messages at top and bottom of the photo, then share and save the photo.
+- users can choose different text fonts and colors
+- Display edited photo in both collection view and table view.
+- Users can select a photo from collection view or table view to edit it.
 
 
 ### Known bugs
