@@ -59,7 +59,7 @@ class MMFEditorViewController: UIViewController, UIPopoverControllerDelegate, UI
         initializeUICaptionTextField(captionTextFieldT)
         initializeUICaptionTextField(captionTextFieldB)
         
-        print("\n\nIn Editor 'viewDidLoad': \(memeEditor)\n")
+        //print("\n\nIn Editor 'viewDidLoad': \(memeEditor)\n")
         updateEditorView()
         setupMenuItem()
         setupSlider()
@@ -74,7 +74,7 @@ class MMFEditorViewController: UIViewController, UIPopoverControllerDelegate, UI
         if view.frame.origin.y > 0 {
             view.frame.origin.y = 0
         }
-        print("\n\nIn Editor 'viewWillAppear': \(memeEditor)\n")
+        //print("\n\nIn Editor 'viewWillAppear': \(memeEditor)\n")
         updateBBItemsStatus()
         fontView.isHidden = true
     }
@@ -82,7 +82,7 @@ class MMFEditorViewController: UIViewController, UIPopoverControllerDelegate, UI
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        print("\n\nIn Editor 'viewWillDisappear': \(memeEditor)\n")
+        //print("\n\nIn Editor 'viewWillDisappear': \(memeEditor)\n")
     }
     
     
@@ -144,7 +144,7 @@ class MMFEditorViewController: UIViewController, UIPopoverControllerDelegate, UI
         if appDelegate.memes.count > 0 {
             print("viewCounts: \(String(describing: self.navigationController?.viewControllers.count))")
             self.dismiss(animated: false, completion: {
-                NotificationCenter.default.post(name: .UIDeviceOrientationDidChange, object: nil)
+                NotificationCenter.default.post(name: UIDevice.orientationDidChangeNotification, object: nil)
             })
         }
     }
@@ -160,7 +160,7 @@ class MMFEditorViewController: UIViewController, UIPopoverControllerDelegate, UI
                 self.saveMeme()
                 self.dismiss(animated: false, completion: {
                     // Device orientation change
-                    NotificationCenter.default.post(name: .UIDeviceOrientationDidChange, object: nil)
+                    NotificationCenter.default.post(name: UIDevice.orientationDidChangeNotification, object: nil)
                 })
             }
         }
@@ -300,14 +300,17 @@ extension MMFEditorViewController {
 extension MMFEditorViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: UIImagePickerControllerDelegate
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
         
         var image: UIImage!
         
         if picker.allowsEditing == true {
-            image = info[UIImagePickerControllerEditedImage] as! UIImage
+            image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage
         } else {
-            image = info[UIImagePickerControllerOriginalImage] as! UIImage
+            image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage
         }
         
         imageView.image = image
@@ -336,13 +339,13 @@ extension MMFEditorViewController: UIImagePickerControllerDelegate, UINavigation
 
 extension MMFEditorViewController {
     func subscribeKeyboardNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     func unsubscripeKeyboardNotification() {
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 }
 
@@ -372,7 +375,7 @@ extension MMFEditorViewController {
     
     func getKeyboardHeight(_ notification: Notification) -> CGFloat {
         let userInfo = notification.userInfo
-        let keyboardSize = userInfo?[UIKeyboardFrameEndUserInfoKey] as! NSValue
+        let keyboardSize = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.cgRectValue.height
     }
     
@@ -399,12 +402,12 @@ extension MMFEditorViewController {
         let font = UIFont(descriptor: descriptor, size: 40)
         
         
-        let textFieldAttributes: [String : Any] = [NSAttributedStringKey.foregroundColor.rawValue : UIColor.white,
-                                                   NSAttributedStringKey.strokeColor.rawValue : UIColor.black,
-                                                   NSAttributedStringKey.strokeWidth.rawValue : -3.0,
-                                                   NSAttributedStringKey.font.rawValue : font]
+        let textFieldAttributes: [String : Any] = [NSAttributedString.Key.foregroundColor.rawValue : UIColor.white,
+                                                   NSAttributedString.Key.strokeColor.rawValue : UIColor.black,
+                                                   NSAttributedString.Key.strokeWidth.rawValue : -3.0,
+                                                   NSAttributedString.Key.font.rawValue : font]
         
-        textField.defaultTextAttributes = textFieldAttributes
+        textField.defaultTextAttributes = convertToNSAttributedStringKeyDictionary(textFieldAttributes)
         
         textField.textAlignment = .center
         textField.autocapitalizationType = .allCharacters
@@ -419,4 +422,19 @@ extension MMFEditorViewController {
             textField.placeholder = "BOTTOM"
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToNSAttributedStringKeyDictionary(_ input: [String: Any]) -> [NSAttributedString.Key: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }

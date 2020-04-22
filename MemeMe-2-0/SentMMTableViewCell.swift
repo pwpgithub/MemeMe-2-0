@@ -55,10 +55,10 @@ class SentMMTableViewCell: UITableViewCell {
     
     func configureImageLabelFont(_ label: UILabel) {
         
-        let labelTextAttributes: [NSAttributedStringKey : Any] = [
-            NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue) : UIColor.white,
-            NSAttributedStringKey(rawValue: NSAttributedStringKey.strokeColor.rawValue) : UIColor.black,
-            NSAttributedStringKey(rawValue: NSAttributedStringKey.strokeWidth.rawValue) : -3.0,
+        let labelTextAttributes: [NSAttributedString.Key : Any] = [
+            NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue) : UIColor.white,
+            NSAttributedString.Key(rawValue: NSAttributedString.Key.strokeColor.rawValue) : UIColor.black,
+            NSAttributedString.Key(rawValue: NSAttributedString.Key.strokeWidth.rawValue) : -3.0,
             NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue) : UIFont.init(name: "HelveticaNeue-CondensedBold", size: 17)!
         ]
         

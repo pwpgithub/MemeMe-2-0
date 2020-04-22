@@ -124,11 +124,11 @@ extension SentMMCollectionViewController {
 extension SentMMCollectionViewController {
     func subscribeDeviceOrientation() {
         //UIDevice.current.beginGeneratingDeviceOrientationNotifications()
-        NotificationCenter.default.addObserver(self, selector: #selector(deviceOrientationChaged(_:)), name: .UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deviceOrientationChaged(_:)), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     func unsubscribeDevicOrientation() {
-        NotificationCenter.default.removeObserver(self, name: .UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
         //UIDevice.current.endGeneratingDeviceOrientationNotifications()
     }
 }

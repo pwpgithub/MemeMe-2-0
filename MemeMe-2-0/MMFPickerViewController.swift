@@ -56,9 +56,9 @@ class MMFPickerViewController: UIViewController, UIPickerViewDelegate, UIPickerV
 
     let colorButtons: [UIButton] = [UIButton]()
     
-    init(_ textAttributes: [NSAttributedStringKey : Any]) {
-        textColor = textAttributes[NSAttributedStringKey.foregroundColor] as! UIColor
-        textFont = textAttributes[NSAttributedStringKey.font] as! UIFont
+    init(_ textAttributes: [NSAttributedString.Key : Any]) {
+        textColor = textAttributes[NSAttributedString.Key.foregroundColor] as! UIColor
+        textFont = textAttributes[NSAttributedString.Key.font] as! UIFont
         textSize = textFont.pointSize
         textFontDescriptor = textFont.fontDescriptor
         

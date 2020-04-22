@@ -33,7 +33,7 @@ class MMFDetailViewController: UIViewController, UIScrollViewDelegate {
         super.viewWillAppear(animated)
         
         self.memeImageView.image = memeDetail.memeImage
-        print("\n\nIn Detail: \(memeDetail)")
+        //print("\n\nIn Detail: \(memeDetail)")
         
     }
     
@@ -44,7 +44,7 @@ class MMFDetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        NotificationCenter.default.post(name: .UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.post(name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     func setupScrollView () {

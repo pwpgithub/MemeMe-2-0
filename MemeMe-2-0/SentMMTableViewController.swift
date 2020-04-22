@@ -38,7 +38,7 @@ class SentMMTableViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NotificationCenter.default.post(name: .UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.post(name: UIDevice.orientationDidChangeNotification, object: nil)
     }
 }
 
@@ -80,11 +80,11 @@ extension SentMMTableViewController: UITableViewDelegate {
         return "Remove"
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let appDelegate = UIApplication.shared.delegate as! MMFAppDelegate
             appDelegate.memes.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.top)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.top)
         }
     }
 }
