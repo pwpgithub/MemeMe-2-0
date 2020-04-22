@@ -29,6 +29,6 @@ struct  MMFFonts {
                 fonts.append(font)
             }
         }
-        print(fonts)
+        //print(fonts)
     }
 }

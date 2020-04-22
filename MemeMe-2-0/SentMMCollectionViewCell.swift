@@ -38,10 +38,11 @@ class SentMMCollectionViewCell: UICollectionViewCell {
     func configureImageLabelFont(_ label: UILabel) {
         
         let labelTextAttributes: [NSAttributedString.Key : Any] = [
+            
             NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue) : UIColor.white,
             NSAttributedString.Key(rawValue: NSAttributedString.Key.strokeColor.rawValue) : UIColor.black,
             NSAttributedString.Key(rawValue: NSAttributedString.Key.strokeWidth.rawValue) : -3.0,
-            NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue) : UIFont.init(name: "HelveticaNeue-CondensedBold", size: 17)!
+            NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue) : UIFont.init(name: "HelveticaNeue-CondensedBold", size: 17)!
         ]
         
         let text = label.text
