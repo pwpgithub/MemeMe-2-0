@@ -4,6 +4,8 @@
 *.xcuserstate
 project.xcworkspace/
 xcuserdata/
+*.xcodeproj/
+
 
 *.o
 *.pyc
