@@ -1,2 +1,9 @@
-.DS_Store
-*.xcodeproj
+*.DS_Store
+
+*.pbxuser
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
+
+*.o
+*.pyc
